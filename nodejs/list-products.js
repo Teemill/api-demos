@@ -41,24 +41,5 @@ const getProducts = async () => {
 
   spinner.stop();
 
-  products.forEach(product => {
-    console.log(
-      chalk.bgGreen(' Product '),
-      product.title
-    );
-
-    product.variants.forEach(variant => {
-      console.log(
-        chalk.bgBlue(' Variant '),
-        ...variant.attributes.flatMap((attribute) => [
-          chalk.gray(`${attribute.name}:`),
-          chalk.blue(attribute.value),
-          '	'
-        ]),
-        '	',
-        chalk.white(variant.ref)
-      );
-    });
-    console.log();
-  });
+  console.dir(products, {depth: null});
 })();
