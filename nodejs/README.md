@@ -31,7 +31,7 @@ Create and submit a new order
     > node ./create-order.js --project=<project> --auth-key=<private-key>
     ```
 2) Enter your contact and address details
-3) Enter the reference to the variant you wish to create an order for (Can be found by using list projects)
+3) Enter the reference to the variant you wish to create an order for (Can be found by using list products)
 4) Review the order details
 5) Create the order
 
