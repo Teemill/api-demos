@@ -26,9 +26,11 @@ const getOrder = async (orderRef) => {
   try {
     const response = await fetch(`${orderRef}?project=${projectName}`, options);
 
+    const data = await response.json();
+
     switch (response.status) {
       case 200:
-        return await response.json();
+        return data;
 
       default:
         throw new Error('Unknown Error');

@@ -27,12 +27,14 @@ const createOrder = async (orderData) => {
   try {
     const response = await fetch(`${baseUrl}/v1/orders?project=${projectName}`, options);
 
+    const data = await response.json();
+
     switch (response.status) {
       case 201:
-        return await response.json();
+        return data;
 
       case 400:
-        throw new Error((await response.json()).message);
+        throw new Error(data.message);
 
       default:
         throw new Error('Unknown Error');
